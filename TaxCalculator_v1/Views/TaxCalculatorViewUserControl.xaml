@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="TaxCalculator_v1.Views.TaxCalculatorViewUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TaxCalculator_v1.Views"
+             xmlns:VM="clr-namespace:TaxCalculator_v1.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance VM:TaxCalculatorViewModel}">
+
+    <StackPanel Height="450">
+        <Label Foreground="Blue" Margin="5,5,5,0">Annual Salary</Label>
+        <TextBox Text="{Binding Salary, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        <Label Foreground="Blue" Margin="5,5,5,0">Age</Label>
+        <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        <Button Command="{Binding CalculateTaxCommand}" Margin="5">Convert</Button>
+        <ListBox ItemsSource="{Binding History}" Height="200" Margin="5"/>
+    </StackPanel>
+
+</UserControl>
